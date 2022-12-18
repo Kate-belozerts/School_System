@@ -1,0 +1,135 @@
+<mxfile host="65bd71144e">
+    <diagram id="7RIWxsnL2a_Jxtr9W0i4" name="Страница 1">
+        <mxGraphModel dx="2040" dy="1179" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="&lt;b&gt;БД администратора&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;i&gt;Ф;И;П&amp;nbsp;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="90" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;b&gt;БД ученик&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;br&gt;&lt;i&gt;Ф;И;К;П&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="170" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="&lt;b&gt;БД препод&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;br&gt;&lt;i&gt;Ф;И;Пр;П&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="230" y="250" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;b&gt;БД ДЗ (csv)&lt;/b&gt;&lt;br&gt;&lt;i&gt;5А математика&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="590" y="90" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;b&gt;main&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="800" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&lt;b&gt;logger(Тимофей)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="560" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="14" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="159.8620689655172" y="460" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="160" y="520"/>
+                            <mxPoint x="330" y="520"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="&lt;b&gt;student(Екатерина)&lt;/b&gt;&lt;br&gt;&lt;i&gt;- Просмотр оценок (персонально)&lt;br&gt;- Просмотр ДЗ&lt;br&gt;- Запрос админу&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="560" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="15" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="550" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="60" y="780"/>
+                            <mxPoint x="60" y="480"/>
+                            <mxPoint x="360" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="&lt;b&gt;teacher(Валерий)&lt;/b&gt;&lt;br&gt;&lt;i&gt;- Написание ДЗ&lt;br&gt;- Выставление оценок&lt;br&gt;- Запрос админу&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="100" y="720" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="16" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="16" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="620" y="580" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="600" y="580"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="&lt;b&gt;authorization (Денис)&lt;/b&gt;&lt;br&gt;&lt;i&gt;- Проверка статуса&lt;br&gt;- Проверка учетной записи&lt;br&gt;(Логин, Пароль из файла)&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="500" y="640" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="17" target="12">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="740" y="860"/>
+                            <mxPoint x="740" y="480"/>
+                            <mxPoint x="390" y="480"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="&lt;b&gt;admin (Ярослав)&lt;/b&gt;&lt;br&gt;&lt;i&gt;- Добавление/удаление учетных записей&lt;br&gt;- Чтение и решение&amp;nbsp;&lt;/i&gt;&lt;i&gt;запросов&lt;/i&gt;&lt;i&gt;&lt;br&gt;- Просмотр логов&lt;br&gt;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="800" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="18" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" style="edgeStyle=none;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="18" target="15">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="780"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" style="edgeStyle=none;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="18" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" style="edgeStyle=none;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="18" target="14">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="620"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="&lt;b&gt;menu(Николай)&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="680" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;b&gt;БД пользователей&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;i&gt;L;P;И;Ф;S&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="330" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="&lt;b&gt;БД&amp;nbsp;&lt;/b&gt;&lt;b&gt;Оценки (xlsx)&lt;br&gt;&lt;/b&gt;&lt;i&gt;5А:&lt;br&gt;- Математика&lt;br&gt;- Русский язык&lt;br&gt;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="210" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;b&gt;БД&amp;nbsp;&lt;/b&gt;&lt;b&gt;Оценки&amp;nbsp;&lt;/b&gt;&lt;b&gt;(xlsx)&lt;/b&gt;&lt;i&gt;&lt;br&gt;10Б:&lt;br&gt;- Математика&lt;br&gt;- Русский язык&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="430" y="90" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="&lt;b&gt;БД ДЗ&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;br&gt;&lt;i&gt;5А русский&lt;br&gt;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="170" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&lt;b&gt;БД ДЗ&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;i&gt;&lt;br&gt;10Б математика&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="250" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;b&gt;БД ДЗ&amp;nbsp;&lt;/b&gt;&lt;b&gt;(csv)&lt;/b&gt;&lt;br&gt;&lt;i&gt;10Б русский&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="330" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="&lt;b&gt;Блоки&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="350" y="430" width="50" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="L - Login&lt;br&gt;P - Password&lt;br&gt;S - Status&lt;br&gt;Ф - Фамилия&lt;br&gt;И - Имя&lt;br&gt;К - Класс&lt;br&gt;Пр - Предмкт&lt;br&gt;П - Пароль&lt;br&gt;Н - Номер заявки&lt;br&gt;Т - Текст заявки&lt;br&gt;С -Статус" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=0;" vertex="1" parent="1">
+                    <mxGeometry x="75" y="170" width="110" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="&lt;b&gt;БД Заявок (csv)&lt;br&gt;&lt;/b&gt;&lt;i&gt;Н;Т;С&lt;/i&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="70" y="90" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;b&gt;Базы данных&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="325" y="40" width="100" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
