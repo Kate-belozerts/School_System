@@ -4,8 +4,8 @@ import autorization as au
 import logger as lg
 import admin
 
-print('Добро пожаловать! Вас приветствует информационная система "Школик"')
 
+print('Добро пожаловать! Вас приветствует информационная система "Школик"')
 
 
 def menu():
@@ -15,8 +15,9 @@ def menu():
         print('Введите логин и пароль либо пробелы для выхода:\n'
                 '1 - Авторизоваться\n'
                 '2 - Выход\n')
+
         login = str(input('Введите логин: '))
-        
+
         lg.Log(f'User has entered login - {login}')
         password = str(input('Введите пароль: '))
         lg.Log(f'User has entered password - {password}')
@@ -24,6 +25,8 @@ def menu():
         status = au.control(login)
         print(status)
 
+        name = login + ';' + password ## Отправить в модуль студента
+        
         if status == ' Teacher':
             print('Вы вошли как преподаватель. Введите необходимое действие:\n'
             '1 - Написание ДЗ\n'
@@ -52,12 +55,12 @@ def menu():
 
             while command != 4:
                 if command == 1:
-                    student.read_score()
+                    student.read_score(name) ## 
                 if command == 2:
-                    student.read_HW()
+                    student.read_HW(name) ##
                 if command == 3:
                     message = str(input('Введите запрос: '))
-                    student.request_admin(message)
+                    student.request_admin(message, name) ## Добавила имя
 
         if status == ' Admin':
             print('Вы вошли как администратор. Введите необходимое действие:\n'
@@ -84,3 +87,4 @@ def menu():
             flag = False
 
 
+menu()
