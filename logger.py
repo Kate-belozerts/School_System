@@ -8,7 +8,6 @@ def Log(data):
                     .format(time, data))
 
 
-
 # import os
 # from loguru import logger
 # from datetime import datetime as dt
@@ -20,10 +19,3 @@ def Log(data):
 # # можно указать вместо 100 KB - 1 MB или 10:00 (файл будет перезивасыватся в зип каждый день в 10 утра)
 
 # logger.debug(logger)
-
-logger.debug(logger)
-def Log(data):
-    time = dt.now().strftime('%d.%m.%Y %H:%M')
-    with open('log.csv', 'a') as file:
-        file.write('{} - {}\n'
-                    .format(time, data))
