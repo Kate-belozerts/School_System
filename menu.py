@@ -7,7 +7,7 @@ import admin
 print('Добро пожаловать! Вас приветствует информационная система "Школик"')
 
 
-def Menu():
+def menu():
     flag = True
 
     while flag:
