@@ -1,5 +1,5 @@
 import os
-from loguru import logger
+import logger
 from datetime import datetime as dt
 os.chdir(os.path.dirname(__file__))
 
