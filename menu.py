@@ -7,6 +7,7 @@ import admin
 print('Добро пожаловать! Вас приветствует информационная система "Школик"')
 
 
+
 def menu():
     flag = True
 
@@ -20,7 +21,7 @@ def menu():
         password = str(input('Введите пароль: '))
         lg.Log(f'User has entered password - {password}')
         
-        status = au.control(login, password)
+        status = au.control(login)
         print(status)
 
         if status == ' Teacher':
@@ -40,7 +41,7 @@ def menu():
                 if command == 3:
                     message = str(input('Введите запрос: '))
                     teacher.request_admin(message)
-        
+
         if status == ' Student':
             print('Вы вошли как ученик. Введите необходимое действие:\n'
             '1 - Просмотр оценок\n'
@@ -57,7 +58,7 @@ def menu():
                 if command == 3:
                     message = str(input('Введите запрос: '))
                     student.request_admin(message)
-                
+
         if status == ' Admin':
             print('Вы вошли как администратор. Введите необходимое действие:\n'
             '1 - Добавление учетной записи\n'
@@ -76,9 +77,10 @@ def menu():
                     admin.read_request()
                 if command == 4:
                     admin.read_log()
-                
+
 
         if login == ' ' and password == ' ':
-            lg.Log('User has selected exit')
+            #lg.Log('User has selected exit')
             flag = False
-    
+
+
