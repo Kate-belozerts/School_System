@@ -42,15 +42,16 @@ def rater_input_checker(message):
 
 
 def homework_adder(teacher_id):
-    teacher_id = list(teacher_id.split(';'))
-    lesson_id = teacher_id[2]
+    # teacher_id = list(teacher_id.split(';'))
+    print(teacher_id)
+    lesson_id = teacher_id[4]
     lesson_date = date.today().strftime('%d.%m.%Y')
     class_id = class_existence_checker(
-        f'{" ".join(teacher_id[0:2])}, какому классу будет Д/З: ')
+        f'{" ".join(teacher_id[2:4])}, какому классу будет Д/З: ')
 
-    path_id = r'..\DataBase\{}_Класс'.format(class_id)
-    homework_file = r'{}\{}_ДЗ_{}.csv'.format(
-        dir_maker(path_id), class_id, lesson_id)
+    # path_id = r'.\_BD\{}_Класс'.format(class_id)
+    homework_file = r'_BD\_{}{}_HW.csv'.format(
+        class_id, lesson_id)
     homework = input(f'Какое Д/З будет у {class_id}?\n')
     homework = [[lesson_date, lesson_id, homework]]
 
@@ -62,21 +63,24 @@ def homework_adder(teacher_id):
 
 
 def knowledge_rater(teacher_id):
-    teacher_id = list(teacher_id.split(';'))
-    lesson_id = teacher_id[2]
+    # teacher_id = list(teacher_id.split(';'))
+    lesson_id = teacher_id[4]
     class_id = class_existence_checker('Номер класса: ')
-    student_id = input('Введите Имя и Фамилию ученика через пробел: ')
-    knowledge_rating = rater_input_checker('Введите оценку: ')
-    student_id.append(lesson_id).append(knowledge_rating)
-
-    path_id = r'..\DataBase\{}_Класс'.format(class_id)
-    rating_paper = r'{}\{}_Оценки.csv'.format(dir_maker(path_id), class_id)
+    student_id = input('Введите Имя и Фамилию ученика через пробел: ').split()
+    knowledge_rating = str(rater_input_checker('Введите оценку: '))
+    student_id.append(class_id)
+    student_id.append(lesson_id)
+    student_id.append(knowledge_rating)
+    rating_paper = r'_BD\_Marks.csv'
     with open(rating_paper, 'a', encoding='utf-8') as file:
         writer = csv.writer(file, delimiter=';')
         for row in student_id:
-            if row[0:3] == student_id[0:3]:
-                writer.writerow(student_id[3])
-    print(teacher_id, student_id, knowledge_rating)
+            if row[2:6] == student_id[0:4]:
+                # writer.writerow(student_id[4])
+                row.append(student_id[4])
+                # print(row)
+
+    print(teacher_id, student_id)
 
 
 def student_finder(student_id, class_id):
@@ -97,6 +101,9 @@ def menu_(key, teacher_id):
     el1, el2 = menu_dict[key]
     el1(el2)
 
+
+def request_admin(teacher_id):
+    print('+')
 
 # teacher_id = 'Василий;Петров;Математика'
 # menu_list = '1. Дать ДЗ.\n2. Дать оценку.'

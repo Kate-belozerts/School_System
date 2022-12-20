@@ -73,7 +73,7 @@ def find_puple(request, name):
             return result[4]
 
 
-request_admin('Want more weekends', name)
+# request_admin('Want more weekends', name)
 # read_score(name)
 # read_HW(name)
 # find_puple('mark', name)
