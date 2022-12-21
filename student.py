@@ -1,7 +1,7 @@
 import os
 from datetime import datetime as dt
 os.chdir(os.path.dirname(__file__))
-name = 'Gorbunava;Ulia'
+#name = 'Gorbunava;Ulia'
 
 
 def read_score(name):
@@ -59,13 +59,13 @@ def find_puple(request, name):
         if request == 'mark':
             lesson = int(input('Какой предмет вас интересует?\nМатематика - нажмите 1\nРусский язык - нажмите 2\nФизика - нажмите 3\n'))
             if lesson == 1:
-                result = filter(lambda i: 'математика' in i, result)
+                result = filter(lambda i: 'Математика' in i, result)
                 print(*result)
             if lesson == 2:
-                result = filter(lambda i: 'русский' in i, result)
+                result = filter(lambda i: 'Русский' in i, result)
                 print(*result)
             if lesson == 3:
-                result = filter(lambda i: 'физика' in i, result)
+                result = filter(lambda i: 'Физика' in i, result)
                 print(*result)                
 
         if request == 'homework':
@@ -73,7 +73,7 @@ def find_puple(request, name):
             return result[4]
 
 
-request_admin('Want more weekends', name)
+#request_admin('Want more weekends', name)
 # read_score(name)
 # read_HW(name)
 # find_puple('mark', name)
