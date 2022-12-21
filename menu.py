@@ -16,6 +16,7 @@ def teachers_menu(key, teacher_id):
 
 def students_menu(key, student_id):
     flag = True
+    print(student_id[0:2])
     menu_student_dict = {'1': (student.read_score, student_id[2:4]), '2': (print, 'student_id'), 
     '3': (print, 'student_id2'), '4': (turn_to_false, flag)}
     el1, el2 = menu_student_dict[key]
@@ -37,9 +38,8 @@ def Menu():
         print('Введите логин и пароль либо пробелы для выхода:\n'
                 '1 - Авторизоваться\n'
                 '2 - Выход\n')
-        # login = 'Fedorov'
+                
         login = str(input('Введите логин: '))
-        # password = 'Victor'
         password = str(input('Введите пароль: '))
 
         status, id = au.control(login, password)
@@ -59,7 +59,7 @@ def Menu():
             '2 - Просмотр ДЗ\n'
             '3 - Запрос админу\n'
             '4 - Выход')
-            students_menu(input('Введите действие: '), id[2:4])
+            students_menu(input('Введите действие: '), id)
 
                 
         if status == 'Admin':
