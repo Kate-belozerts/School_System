@@ -18,8 +18,7 @@ def dir_maker(path_id):
 
 
 def class_existence_checker(message):
-    class_list = ['1А', '1Б', '2А', '2Б', '3А', '3Б', '4А', '4Б', '5А', '5Б',
-                  '6А', '6Б', '7А', '7Б', '8А', '8Б', '9А', '9Б', '10А', '10Б', '11А', '11Б']
+    class_list = ['5А', '6А', '10А']
     class_id = input(message)
     if class_id.upper() not in class_list:
         print('Такого класса не существует!')
@@ -42,15 +41,12 @@ def rater_input_checker(message):
 
 
 def homework_adder(teacher_id):
-    # teacher_id = list(teacher_id.split(';'))
-    print(teacher_id)
     lesson_id = teacher_id[4]
     lesson_date = date.today().strftime('%d.%m.%Y')
     class_id = class_existence_checker(
         f'{" ".join(teacher_id[2:4])}, какому классу будет Д/З: ')
 
-    # path_id = r'.\_BD\{}_Класс'.format(class_id)
-    homework_file = r'_BD\_{}{}_HW.csv'.format(
+    homework_file = r'_BD\{}{}_HW.csv'.format(
         class_id, lesson_id)
     homework = input(f'Какое Д/З будет у {class_id}?\n')
     homework = [[lesson_date, lesson_id, homework]]
@@ -63,24 +59,46 @@ def homework_adder(teacher_id):
 
 
 def knowledge_rater(teacher_id):
-    # teacher_id = list(teacher_id.split(';'))
-    lesson_id = teacher_id[4]
-    class_id = class_existence_checker('Номер класса: ')
-    student_id = input('Введите Имя и Фамилию ученика через пробел: ').split()
+    subject_one = 'Математика'
+    subject_two = 'Русский'
+    lesson_id = teacher_id[4] # Математика
+    student_id = input('Введите Фамилию и Имя ученика через пробел: ').replace(' ', ';')
     knowledge_rating = str(rater_input_checker('Введите оценку: '))
-    student_id.append(class_id)
-    student_id.append(lesson_id)
-    student_id.append(knowledge_rating)
-    rating_paper = r'_BD\_Marks.csv'
-    with open(rating_paper, 'a', encoding='utf-8') as file:
-        writer = csv.writer(file, delimiter=';')
-        for row in student_id:
-            if row[2:6] == student_id[0:4]:
-                # writer.writerow(student_id[4])
-                row.append(student_id[4])
-                # print(row)
+    with open ('_BD\_Marks.csv', 'r', encoding='utf-8-sig') as file:
+        file = list(map(str, file.read().split()))
+        temp = list(filter(lambda x: student_id not in x, file)) # Без ученка для выставления оценки
+        file = list(filter(lambda x: student_id in x, file))
+        file = [i.split(';') for i in file]
 
-    print(teacher_id, student_id)
+        if subject_one == lesson_id:
+            end_position = subject_two
+        elif subject_two == lesson_id:
+            end_position = subject_one
+
+        result = []
+        [[result.append(j) for j in i] for i in file]
+        print(result)
+        if end_position in result[5]:
+            end_position = result[5]
+        elif end_position in result[11]:
+            end_position = result[11]
+        class_id = result[4] # 5A
+        name = '' # Anufriev;Nikita;Ануфриев;Никита;5А;
+        for i in range(5):
+            name += result[i] + ';'
+        result = list(filter(lambda i: lesson_id in i, result)) # ['Математика:2,5,4']
+        new = f'{result[0]},{knowledge_rating}' # Математика:2,5,4,5
+        result = name + new #Anufriev;Nikita;Ануфриев;Никита;5А;Математика:2,5,4,5
+        end_position = name + end_position
+        print(f'Оценка {knowledge_rating} выставлена ученику {class_id}-класса: {student_id}, по предмету: {lesson_id}')
+    
+    with open ('_BD\_Marks.csv', 'w', encoding='utf-8-sig') as file:
+        for i in range(len(temp)):
+            file.write(temp[i])
+            file.write('\n')
+        file.write(result)
+        file.write('\n')
+        file.write(end_position)
 
 
 def student_finder(student_id, class_id):
@@ -90,38 +108,17 @@ def student_finder(student_id, class_id):
     path_id = r'..\DataBase\{}_Класс'.format(class_id)
     students_list = r'{}\{}_Список_Учеников.csv'.format(
         dir_maker(path_id), class_id)
-    with open(students_list, 'r', encode='utf-8') as file:
+    with open(students_list, 'r', encoding='utf-8-sig') as file:
         for line in file:
             print(line)
 
 
-def menu_(key, teacher_id):
-    menu_dict = {'1': (homework_adder, teacher_id),
-                 '2': (knowledge_rater, teacher_id)}
-    el1, el2 = menu_dict[key]
-    el1(el2)
-
-
 def request_admin(teacher_id):
-    print('+')
+    message = str(input('Введите запрос: '))
+    question = (f'{message}, From {teacher_id}')
+    time = str(date.today()) + ' - '
+    with open ('_BD\_Requests.csv', 'a', encoding='utf-8-sig') as send:
+        send.write(time)
+        send.write(question)
+        send.write(f'\n')
 
-# teacher_id = 'Василий;Петров;Математика'
-# menu_list = '1. Дать ДЗ.\n2. Дать оценку.'
-# print(menu_list)
-# menu_(input('Введите что хотите сделать: '), teacher_id)
-
-'''
-    #Намётки на меню и вызов функций через словари.
-teacher_id = 'Василий;Петров;Математика'
-
-
-def menu_(key, teacher_id):
-    menu_dict = {'1': (homework_adder, teacher_id), '2': (knowledge_rater, teacher_id)}
-    el1, el2 = menu_dict[key]
-    el1(el2)
-
-
-menu_list = '1. Дать ДЗ.\n2. Дать оценку.'
-print(menu_list)
-menu_(input('Введите что хотите сделать: '), teacher_id)
-'''
